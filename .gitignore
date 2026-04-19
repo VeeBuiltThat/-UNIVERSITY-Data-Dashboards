@@ -1,0 +1,20 @@
+# React
+react-dashboard/node_modules/
+react-dashboard/build/
+react-dashboard/.env.local
+react-dashboard/.env.development.local
+react-dashboard/.env.test.local
+react-dashboard/.env.production.local
+react-dashboard/npm-debug.log*
+react-dashboard/yarn-debug.log*
+react-dashboard/yarn-error.log*
+
+# R
+shiny-dashboard/.Rhistory
+shiny-dashboard/.RData
+shiny-dashboard/.Ruserdata
+shiny-dashboard/rsconnect/
+
+# OS
+.DS_Store
+Thumbs.db
