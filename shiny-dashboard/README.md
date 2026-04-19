@@ -1,74 +1,29 @@
-# Shiny Data Dashboard
+# Shiny Dashboard
 
-Interactive dashboard built with **R Shiny** visualising the built-in `iris` and `mtcars` datasets.
+An R Shiny dashboard that visualises the built-in `iris` and `mtcars` datasets. Uses `shinydashboard` for layout, `ggplot2` + `plotly` for interactive charts, and `DT` for the data tables.
 
-## Features
-| Tab | Charts |
-|-----|--------|
-| Iris | Scatter plot, Histogram, Box plot, Data table |
-| MTCars | Scatter plot, Bar chart (avg MPG), Horsepower histogram, Data table |
+There are two tabs. The iris tab has a scatter plot, histogram, and box plot with species filtering. The mtcars tab has a scatter plot and bar chart with cylinder filtering. Both tabs show summary value boxes at the top.
 
-Both tabs include:
-- Live-filtering controls (species / cylinder checkboxes)
-- Dynamic axis selectors
-- Summary value boxes
-- Paginated, colour-coded DT table
+## Running it
 
----
-
-## Required R Packages
-
-Run once in your R console:
+Install the required packages first (only needed once):
 
 ```r
 install.packages(c("shiny", "shinydashboard", "ggplot2", "plotly", "DT"))
 ```
 
----
+Then open `app.R` in RStudio and click **Run App**.
 
-## Run Locally
+## Deploying to shinyapps.io
 
-1. Open `app.R` in RStudio.
-2. Click **Run App** (top-right of the editor).
-
----
-
-## Deploy to Posit Cloud (posit.cloud)
-
-1. Sign in at <https://posit.cloud>
-2. Click **New Project → New RStudio Project**
-3. In the **Files** pane click **Upload** and upload `app.R`
-4. In the R Console install packages:
-   ```r
-   install.packages(c("shiny", "shinydashboard", "ggplot2", "plotly", "DT"))
-   ```
-5. Open `app.R` and click **Run App → Run External** (opens in a browser tab)
-
-> To share the running app URL with others, click the **Publish** button in RStudio (top-right) or follow the shinyapps.io steps below.
-
----
-
-## Publish to shinyapps.io (permanent public URL)
-
-1. Create a free account at <https://www.shinyapps.io>
-2. Install `rsconnect`:
-   ```r
-   install.packages("rsconnect")
-   ```
-3. Go to **shinyapps.io → Account → Tokens → Show** and copy the token command, then run it in R:
-   ```r
-   rsconnect::setAccountInfo(name = "YOUR_NAME", token = "YOUR_TOKEN", secret = "YOUR_SECRET")
-   ```
-4. Deploy from the folder containing `app.R`:
+1. Create a free account at https://www.shinyapps.io
+2. Install rsconnect: `install.packages("rsconnect")`
+3. Link your account — go to shinyapps.io → Account → Tokens, copy the token command and run it in R
+4. Deploy:
    ```r
    rsconnect::deployApp()
    ```
-5. Your live URL will be: `https://YOUR_NAME.shinyapps.io/shiny-dashboard/`
 
----
+Your app will be live at `https://YOUR_NAME.shinyapps.io/shiny-dashboard/`.
 
-## Submit link to Batis (university LMS)
-
-1. Copy the live shinyapps.io URL after deployment.
-2. Log in to Batis, navigate to the **Test_2 / Data Benchmarking** assignment.
-3. Paste the Shiny URL and submit.
+Alternatively you can upload `app.R` to Posit Cloud and run it from there.

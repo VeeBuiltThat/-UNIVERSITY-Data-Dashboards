@@ -1,76 +1,31 @@
-# React Data Dashboard
+# React Dashboard
 
-Interactive single-page dashboard built with **React 18 + Recharts** visualising the `iris` and `mtcars` datasets.
+A single-page React app that visualises the `iris` and `mtcars` datasets. Built with React 18 and Recharts.
 
-## Features
-| Tab | Charts |
-|-----|--------|
-| Iris | Scatter plot (configurable axes), Grouped bar chart (avg measurements), Data table |
-| MTCars | Scatter plot (configurable axes), Bar chart (avg MPG & HP by cylinder), Data table |
+There are two tabs — one for each dataset. Each tab has a scatter plot with selectable axes, a bar chart showing averages, and a paginated data table. You can filter by species (iris) or cylinder count (mtcars) using the checkboxes in the sidebar.
 
-Both tabs include:
-- Live axis selectors (dropdowns)
-- Species / cylinder filter (checkboxes)
-- Summary KPI cards
-- Paginated data table with hover highlighting
+## Running it
 
----
-
-## Prerequisites
-
-Node.js 18+ — download from <https://nodejs.org>
-
----
-
-## Run Locally
+Requires Node.js 18+.
 
 ```bash
-cd react-dashboard
 npm install
 npm start
 ```
 
-Opens at <http://localhost:3000>
+Opens at `http://localhost:3000`.
 
----
-
-## Deploy to Netlify
-
-### Option A – Drag & Drop (no account CLI needed)
-
-1. Build the production bundle:
-   ```bash
-   npm install
-   npm run build
-   ```
-2. Sign in at <https://app.netlify.com>
-3. Click **Add new site → Deploy manually**
-4. Drag the generated **`build/`** folder into the drop zone
-5. Done — copy the live URL Netlify provides
-
-### Option B – Netlify CLI
+## Building for deployment
 
 ```bash
-npm install
 npm run build
+```
+
+This produces a `build/` folder with the static site. Upload that folder to Netlify (drag and drop on the Netlify dashboard) or use the CLI:
+
+```bash
 npm install -g netlify-cli
-netlify login
 netlify deploy --prod --dir=build
 ```
 
-### Option C – Connect GitHub (continuous deployment)
-
-1. Push the `react-dashboard` folder to a GitHub repository
-2. In Netlify: **Add new site → Import an existing project → GitHub**
-3. Select your repo; Netlify auto-detects the settings from `netlify.toml`
-   - Build command: `npm run build`
-   - Publish directory: `build`
-4. Click **Deploy site** — every push to `main` auto-deploys
-
----
-
-## Submit link to Batis (university LMS)
-
-1. Copy the Netlify live URL (e.g. `https://my-data-dashboard.netlify.app`)
-2. Log in to Batis, navigate to the **Test_2 / Data Benchmarking** assignment
-3. Paste the React URL and submit
+If you connect this repo to Netlify directly, it will pick up the `netlify.toml` config and build automatically on every push.
